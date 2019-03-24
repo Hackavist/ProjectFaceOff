@@ -6,8 +6,10 @@ video_capture = cv2.VideoCapture(0)
 img = cv2.imread("Nour.JPG")
 resized_image = cv2.resize(img, (500, 500))
 resized_imageencoding = face_recognition.face_encodings(resized_image)[0]
+
 known_face_encodings=[]
 known_face_names=[]
+
 known_face_encodings.append(resized_imageencoding)
 known_face_names.append("Nour")
 
@@ -52,12 +54,3 @@ while True:
 # Release handle to the webcam
 video_capture.release()
 cv2.destroyAllWindows()
-#unknown_picture = face_recognition.load_image_file("Nour2.jpg")
-#unknown_face_encoding = face_recognition.face_encodings(unknown_picture)[0]
-
-#results = face_recognition.compare_faces([my_face_encoding], unknown_  face_encoding)
-#print(results)
-
-#resized_image = cv2.resize(img, (750, 750))
-#face_locations = face_recognition.face_locations(resized_image)
-#print(len(face_locations))
