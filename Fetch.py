@@ -9,15 +9,12 @@ PATH_OF_SAVE_IMAGES_DOWNLOADED = '/home/hackavist/Desktop/Result/'
 
 #The Folder that contains All the CSVs
 files = os.listdir(PATH_OF_CSVS_FOLDER)
-
+#print(files)
 #Selecting all the Files
 for i in files:
-
     data = pd.read_csv(PATH_OF_CSVS_FOLDER+'{}'.format(i))
-
     #Skip the second Line 
     for x in range (1,len(data)):
-
         try:
 
             url = data.iloc[x,9]
