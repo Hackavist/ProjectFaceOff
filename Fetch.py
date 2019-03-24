@@ -4,8 +4,8 @@ import wget
 import pandas as pd
 import os
 
-PATH_OF_CSVS_FOLDER = '/home/hackavist/Desktop/Source'
-PATH_OF_SAVE_IMAGES_DOWNLOADED = '/home/hackavist/Desktop/Result'
+PATH_OF_CSVS_FOLDER = '/home/hackavist/Desktop/Source/'
+PATH_OF_SAVE_IMAGES_DOWNLOADED = '/home/hackavist/Desktop/Result/'
 
 #The Folder that contains All the CSVs
 files = os.listdir(PATH_OF_CSVS_FOLDER)
