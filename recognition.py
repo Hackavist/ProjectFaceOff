@@ -19,8 +19,8 @@ for root,dirs,files in os.walk(image_dir):
         if file.endswith("png")or file.endswith("jpg")or file.endswith("jpeg"):
 
             path = os.path.join(root, file)
-            label = os.path.basename(root)
-            print(path)
+            label=os.path.split(path)[-1]
+            label , var = label.split('.')
             image = face_recognition.load_image_file(path)
             encodings = face_recognition.face_encodings(image)[0]
             x_train.append(encodings)
