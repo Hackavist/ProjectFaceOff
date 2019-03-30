@@ -3,7 +3,7 @@ import cv2
 
 video_capture = cv2.VideoCapture(0)
 
-img = cv2.imread("Nour.JPG")
+img = cv2.imread("test.JPeG")
 resized_image = cv2.resize(img, (500, 500))
 resized_imageencoding = face_recognition.face_encodings(resized_image)[0]
 

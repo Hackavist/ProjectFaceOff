@@ -46,7 +46,7 @@ while True:
 
         face_names = []
         for face_encoding in face_encodings:
-            # See if the face is a match for the known face(s)
+             # See if the face is a match for the known face(s)
             matches = face_recognition.compare_faces(x_train, face_encoding)
             name = "Unknown"
 
