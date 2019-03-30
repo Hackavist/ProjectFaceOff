@@ -21,5 +21,6 @@ for root,dirs,files in os.walk(image_dir):
             img = cv2.imread(path)
             resized_image = cv2.resize(img, (600, 600))
             faces = face_recognition.face_locations(resized_image)
-            print(len(faces))
-            print(path)
+            if len(faces) <= 0:    
+                print(len(faces))
+                print(path)
