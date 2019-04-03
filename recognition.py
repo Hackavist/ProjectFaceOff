@@ -21,8 +21,9 @@ for root,dirs,files in os.walk(image_dir):
             path = os.path.join(root, file)
             label=os.path.split(path)[-1]
             label , var = label.split('.')
-            image = face_recognition.load_image_file(path)
-            encodings = face_recognition.face_encodings(image)[0]
+            img = cv2.imread(path)
+            resized_image = cv2.resize(img, (700, 700))
+            encodings = face_recognition.face_encodings(img)[0]
             x_train.append(encodings)
             y_lables.append(label)
 
@@ -47,7 +48,7 @@ while True:
         face_names = []
         for face_encoding in face_encodings:
              # See if the face is a match for the known face(s)
-            matches = face_recognition.compare_faces(x_train, face_encoding)
+            matches = face_recognition.compare_faces(x_train, face_encoding,tolerance=0.5)
             name = "Unknown"
 
             # If a match was found in known_face_encodings, just use the first one.

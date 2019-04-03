@@ -19,8 +19,8 @@ for root,dirs,files in os.walk(image_dir):
             label=os.path.split(path)[-1]
             label , var = label.split('.')
             img = cv2.imread(path)
-            resized_image = cv2.resize(img, (600, 600))
+            resized_image = cv2.resize(img, (700, 700))
             faces = face_recognition.face_locations(resized_image)
-            if len(faces) <= 0:    
+            if len(faces) >= 0:    
                 print(len(faces))
                 print(path)
